@@ -1,0 +1,13 @@
+Dataset Citation:
+-----------------
+Title: Vehicle Registration Plates Dataset
+Author: https://huggingface.co/keremberke
+URL: https://huggingface.co/datasets/keremberke/license-plate-object-detection
+
+License:
+--------
+This dataset is made available under the Creative Commons Attribution 4.0 International (CC BY 4.0) license. This license allows others to distribute, remix, adapt, and build upon the work, even commercially, as long as they credit the creator for the original creation.
+
+Dataset Description:
+---------------------
+The Vehicle Registration Plates Dataset includes 8,823 images of vehicle registration plates (VRP), annotated in COCO format. No image augmentation techniques were applied to the dataset.
