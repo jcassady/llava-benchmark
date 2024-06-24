@@ -167,22 +167,20 @@ Average eval rate: 56.833 📊
 
 ### Benchmark class
 
-A general-purpose class for processing benchmark results. The `Benchmark` class
-is initialized with a `method` which is a function to process benchmark results.
+A general-purpose class for processing benchmark results. It's used as a base
+class for `EvalRateBenchmark` and `LicensePlateBenchmark` through inheritance.
 
 ### EvalRateBenchmark class
 
-A subclass of the `Benchmark` class. The `EvalRateBenchmark` class is initialized
-with a method to process the evaluation rate from a benchmark result. It also
-]initializes an empty list `eval_rates` to store evaluation rates.
+The `EvalRateBenchmark` class is initialized with a method to process the evaluation
+rate from a benchmark result. It also initializes an empty list `eval_rates` to store
+evaluation rates.
 
 ### LicensePlateBenchmark class
 
-Another subclass of the `Benchmark` class. The `LicensePlateBenchmark` class is
-initialized with a method to process the license plate number from a benchmark
-result. It also initializes two lists: `license_plate_numbers` to store license plate
-numbers, and `model_license_plate_numbers` to store license plate numbers associated
-with each model.
+The `LicensePlateBenchmark` class is initialized with a method to process the license
+plate number from a benchmark result. It also initializes the list `license_plate_numbers`
+to store plate data associated with each model.
 
 ## Extensibility 🔗
 The project is designed to be easily extendable for other LLaVA image recognition tasks.
@@ -229,12 +227,10 @@ a bug, start by opening an issue in the project repository. Describe your sugges
 or bug report in detail.
 
 2. **Discussion**: Once the issue is opened, maintainers of the project or other
-contributors will review the issue and discuss it. You may need to provide more
-information or clarify your suggestion or bug report during this stage.
+contributors will review the issue and discuss it.
 
 3. **Implementation**: If your suggestion is accepted, you or someone else can
-start working on implementing it. Make sure to follow the project's coding
-standards and guidelines.
+start working on implementing it.
 
 We appreciate your help in making the LLAVA Benchmark project better!
 
