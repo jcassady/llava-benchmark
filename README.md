@@ -16,10 +16,11 @@
 - [Configuration 📝](#configuration-📝)
 - [Usage 🛠️](#usage-🛠️)
     * [Command Line 🖥️](#command-line-🖥️)
-- [Classes 📚](#classes-📚)
-    * [Benchmark class](#benchmark-class)
-    * [EvalRateBenchmark class](#evalratebenchmark-class)
-    * [LicensePlateBenchmark class](#licenseplatebenchmark-class)
+- [Documentation 📄](#documentation-📄)
+    - [Classes 📚](#classes-📚)
+        * [Benchmark class](#benchmark-class)
+        * [EvalRateBenchmark class](#evalratebenchmark-class)
+        * [LicensePlateBenchmark class](#licenseplatebenchmark-class)
 - [Extensibility 🔗](#extensibility-🔗)
 - [Testing 🧪](#testing-🧪)
     * [Running the Tests 🏃](#running-the-tests-🏃)
@@ -163,26 +164,49 @@ Average eval rate: 56.833 📊
 
 ```
 
-## Classes 📚
 
-### Benchmark class
+## Documentation 📄
+The source code for the project includes comprehensive documentation comments
+and docstrings. Please see `__init__.py` file comments for additional
+information on how this project loads local module code.  
 
+<<<<<<< Updated upstream
 A general-purpose class for processing benchmark results. It's used as a base
 class for `EvalRateBenchmark` and `LicensePlateBenchmark` through inheritance.
+=======
+### Classes 📚
+>>>>>>> Stashed changes
 
-### EvalRateBenchmark class
+#### Benchmark class
 
+<<<<<<< Updated upstream
 The `EvalRateBenchmark` class is initialized with a method to process the evaluation
 rate from a benchmark result. It also initializes an empty list `eval_rates` to store
 evaluation rates.
+=======
+A general-purpose class for processing benchmark results. It's used as a base
+class for `EvalRateBenchmark` and `LicensePlateBenchmark` through inheritance.
+>>>>>>> Stashed changes
 
-### LicensePlateBenchmark class
+#### EvalRateBenchmark class
+
+<<<<<<< Updated upstream
+The `LicensePlateBenchmark` class is initialized with a method to process the license
+plate number from a benchmark result. It also initializes the list `license_plate_numbers`
+to store plate data associated with each model.
+=======
+The `EvalRateBenchmark` class is initialized with a method to process the evaluation
+rate from a benchmark result. It also initializes an empty list `eval_rates` to store
+evaluation rates.
+>>>>>>> Stashed changes
+
+#### LicensePlateBenchmark class
 
 The `LicensePlateBenchmark` class is initialized with a method to process the license
 plate number from a benchmark result. It also initializes the list `license_plate_numbers`
 to store plate data associated with each model.
 
-## Extensibility 🔗
+#### Extensibility 🔗
 The project is designed to be easily extendable for other LLaVA image recognition tasks.
 This is done through the use of benchmark objects, which are instances of classes that
 define specific tasks.
