@@ -172,8 +172,6 @@ information on how this project loads local module code.
 
 
 ### Classes 📚
->>>>>>> Stashed changes
-
 #### Benchmark class
 A general-purpose class for processing benchmark results. It's used as a base
 class for `EvalRateBenchmark` and `LicensePlateBenchmark` through inheritance.
