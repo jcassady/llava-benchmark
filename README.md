@@ -170,35 +170,18 @@ The source code for the project includes comprehensive documentation comments
 and docstrings. Please see `__init__.py` file comments for additional
 information on how this project loads local module code.  
 
-<<<<<<< Updated upstream
-A general-purpose class for processing benchmark results. It's used as a base
-class for `EvalRateBenchmark` and `LicensePlateBenchmark` through inheritance.
-=======
+
 ### Classes 📚
 >>>>>>> Stashed changes
 
 #### Benchmark class
-
-<<<<<<< Updated upstream
-The `EvalRateBenchmark` class is initialized with a method to process the evaluation
-rate from a benchmark result. It also initializes an empty list `eval_rates` to store
-evaluation rates.
-=======
 A general-purpose class for processing benchmark results. It's used as a base
 class for `EvalRateBenchmark` and `LicensePlateBenchmark` through inheritance.
->>>>>>> Stashed changes
 
 #### EvalRateBenchmark class
-
-<<<<<<< Updated upstream
-The `LicensePlateBenchmark` class is initialized with a method to process the license
-plate number from a benchmark result. It also initializes the list `license_plate_numbers`
-to store plate data associated with each model.
-=======
 The `EvalRateBenchmark` class is initialized with a method to process the evaluation
 rate from a benchmark result. It also initializes an empty list `eval_rates` to store
 evaluation rates.
->>>>>>> Stashed changes
 
 #### LicensePlateBenchmark class
 
