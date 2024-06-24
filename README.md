@@ -8,27 +8,27 @@
 ![llava-benchmark](assets/llava-benchmark_logo.png)
 
 ## Contents
-- [AI Benchmarking Tool 🦙](#ai-benchmarking-tool-🦙)
+- [AI Benchmarking Tool 🦙](#ai-benchmarking-tool)
     * [Included Benchmarks](#included-benchmarks)
-- [Requirements 📋](#requirements-📋)
-- [Cloning the Repository 🚀](#cloning-the-repository-🚀)
+- [Requirements 📋](#requirements)
+- [Cloning the Repository 🚀](#cloning-the-repository)
 - [Setting Up the Project](#setting-up-the-project)
-- [Configuration 📝](#configuration-📝)
-- [Usage 🛠️](#usage-🛠️)
-    * [Command Line 🖥️](#command-line-🖥️)
-- [Documentation 📄](#documentation-📄)
-    - [Classes 📚](#classes-📚)
+- [Configuration 📝](#configuration)
+- [Usage 🛠️](#usage)
+    * [Command Line 🖥️](#command-line)
+- [Documentation 📄](#documentation)
+    - [Classes 📚](#classes)
         * [Benchmark class](#benchmark-class)
         * [EvalRateBenchmark class](#evalratebenchmark-class)
         * [LicensePlateBenchmark class](#licenseplatebenchmark-class)
-- [Extensibility 🔗](#extensibility-🔗)
-- [Testing 🧪](#testing-🧪)
-    * [Running the Tests 🏃](#running-the-tests-🏃)
-- [Contributing 🤝](#contributing-🤝)
-- [About 🧑‍💻](#about-🧑‍💻)
-- [License 📄](#license-📄)
+- [Extensibility 🔗](#extensibility)
+- [Testing 🧪](#testing)
+    * [Running the Tests 🏃](#running-the-tests)
+- [Contributing 🤝](#contributing)
+- [About 🧑‍💻](#about)
+- [License 📄](#license)
 
-## AI Benchmarking Tool 🦙
+## AI Benchmarking Tool
 
 `llava-benchmark` is a general purpose benchmarking tool designed to evaluate AI
 image recognition capabilities of [LLaVA](https://github.com/haotian-liu/LLaVA)
@@ -41,13 +41,13 @@ models with [Ollama](https://ollama.com).
 By running these benchmarks, you can quickly assess how well different models
 perform in recognizing license plates from images, and how quickly they can do so.
 
-## Requirements 📋
+## Requirements
 
 - [Python 3](https://python.org/downloads) 🐍
 - [Ollama](https://ollama.com/download) 🦙
 - Packages: `asciichartpy`, `os`, `pytest`, `shutil`, `subprocess`, `yaml`
 
-## Cloning the Repository 🚀
+## Cloning the Repository
 
 Before running `llava-benchmark`, clone the repository to your local machine:
 
@@ -88,7 +88,7 @@ Follow these steps after cloning into the local `llava-benchmark/` repo director
     ```
 
 
-## Configuration 📝
+## Configuration
 
 The tool uses YAML configuration file `data/config.yml` to specify the `models`, `prompts`,
 and `images` for the benchmark to use. Here's a brief explanation of each section:
@@ -109,7 +109,7 @@ images:
   - 2.jpg
 ```
 
-## Usage 🛠️
+## Usage
 When you execute `llava_benchmark.py`, it performs a series of operations:
 1. **Checks if Ollama is Installed**: The script checks if the `ollama` binary is present
 on your system. If not, it will print an error message and exit.
@@ -128,7 +128,7 @@ prompts, and images, the script prints the average evaluation rate for each mode
 5. **Plots the Evaluation Rate Chart**: The script plots an ASCII line chart of the
 evaluation rates for visual analysis.
 
-### Command Line 🖥️
+### Command Line
 To run the script, navigate to the directory containing the script and type the
 following command:
 
@@ -165,13 +165,13 @@ Average eval rate: 56.833 📊
 ```
 
 
-## Documentation 📄
+## Documentation
 The source code for the project includes comprehensive documentation comments
 and docstrings. Please see `__init__.py` file comments for additional
 information on how this project loads local module code.  
 
 
-### Classes 📚
+### Classes
 #### Benchmark class
 A general-purpose class for processing benchmark results. It's used as a base
 class for `EvalRateBenchmark` and `LicensePlateBenchmark` through inheritance.
@@ -187,7 +187,7 @@ The `LicensePlateBenchmark` class is initialized with a method to process the li
 plate number from a benchmark result. It also initializes the list `license_plate_numbers`
 to store plate data associated with each model.
 
-#### Extensibility 🔗
+#### Extensibility
 The project is designed to be easily extendable for other LLaVA image recognition tasks.
 This is done through the use of benchmark objects, which are instances of classes that
 define specific tasks.
@@ -202,12 +202,12 @@ To extend the script for other LLAVA tasks, you can define new benchmark classes
 implement the code needed for those tasks. Then, you can create instances of those
 classes and add them to the `benchmarks` list.
 
-## Testing 🧪
+## Testing
 The `llava-benchmark` module includes a suite of tests to ensure its functionality.
 These tests are written using the `pytest` framework and make use of fixtures and
 parameterization to test various aspects of the benchmarking process.
 
-### Running the Tests 🏃
+### Running the Tests
 To run the tests, navigate to the `llava-benchmark/tests/` directory and execute
 the following command:
 ```bash
@@ -222,7 +222,7 @@ test_license_plate_benchmark.py .    [100%]
 ===================== 3 passed in 0.06s ===================== 
 ```
 
-## Contributing 🤝
+## Contributing
 
 Contributions are welcome to the `llava-benchmark` project! If you're interested in
 contributing, here's how you can do it:
@@ -239,7 +239,7 @@ start working on implementing it.
 
 We appreciate your help in making the LLAVA Benchmark project better!
 
-## About 🧑‍💻
+## About 
 
 [Jordan Cassady](https://jordan.cassady.me) is a Canadian Network Engineer
 with a decade of startup experience automating test systems aligned to
@@ -249,6 +249,6 @@ or a moonshot idea, count me in. Let’s connect! ✌️
 👉 https://www.linkedin.com/in/jordancassady/
 
 
-## License 📄
+## License
 
 This project is licensed under the terms of the MIT license.
