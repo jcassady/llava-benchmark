@@ -167,7 +167,11 @@ Average eval rate: 56.833 📊
 
 ## Documentation
 The source code for the project includes comprehensive documentation comments
-and docstrings. Please see `__init__.py` file comments for additional
+and docstrings. HTML documentation can be viewed on GitHub Pages:
+
+https://jcassady.github.io/llava-benchmark/ 📄
+
+Please see `__init__.py` file comments for additional
 information on how this project loads local module code.  
 
 
