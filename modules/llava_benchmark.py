@@ -1,65 +1,78 @@
+# Standard library imports.
+from typing import List
+
+# Local library imports.
 from benchmarks.eval_rate_benchmark import EvalRateBenchmark
 from benchmarks.license_plate_benchmark import LicensePlateBenchmark
+from benchmarks.call_audio_benchmark import CallAudioBenchmark
+
+
 
 class LlavaBenchmark:
     """
-    A class to handle benchmarks for LLaVA models.
+    LLaVA Benchmark class for processing media and storing results.
 
-    ...
-
-    Attributes
-    ----------
-    benchmarks : list
-        a list of benchmarks
-
-    Methods
-    -------
-    store_results(benchmark_result, model, image_file_path):
-        Stores the benchmark results.
-    average_and_plot_benchmarks():
-        Calculates the average evaluation rates and plots them.
+    Attributes:
+        benchmarks (list): List of benchmark instances.
     """
 
-    def __init__(self, benchmarks):
+    def __init__(self, benchmarks: List):
         """
-        Constructs all the necessary attributes for the LlavaBenchmark object.
+        Initialize LlavaBenchmark instance.
 
-        Parameters
-        ----------
-            benchmarks : list
-                a list of benchmarks
+        Args:
+            benchmarks (list): List of benchmark instances.
         """
         self.benchmarks = benchmarks
 
-    def store_results(self, benchmark_result, model, image_file_path):
+    def process_media(self, media_file: str) -> tuple:
         """
-        Stores the benchmark results.
+        Process media file and return relevant information.
 
-        Parameters
-        ----------
-        benchmark_result : CompletedProcess
-            The result of the subprocess.run call.
-        model : str
-            The name of the model to use.
-        image_file_path : str
-            The image file path.
+        Args:
+            media_file (str): Path to the media file.
+
+        Returns:
+            tuple: A tuple containing transcript (str) and media file path (str).
         """
         for benchmark in self.benchmarks:
             if isinstance(benchmark, EvalRateBenchmark):
-                # Store the eval rate result from each benchmark.
-                benchmark.store_eval_rate(
-                    benchmark_result, image_file_path)
+                pass  # No media to process for EvalRateBenchmark.
             elif isinstance(benchmark, LicensePlateBenchmark):
-                # Store the license plate number from each benchmark.
-                benchmark.store_license_plate(model, benchmark_result)
+                _transcript = ""  # Dummy transcript object.
+                media_file_path = benchmark.media_file_path(media_file)
+                return _transcript, media_file_path
+            elif isinstance(benchmark, CallAudioBenchmark):
+                processed_audio = benchmark.process_audio(media_file)
+                transcript = benchmark.transcribe_audio(processed_audio)
+                media_file_path = benchmark.media_file_path(media_file)
+                return transcript, media_file_path
 
-    def average_and_plot_benchmarks(self):
+    def store_results(self, benchmark_result: str, model: str, media_file_path: str) -> None:
         """
-        Calculates the average evaluation rates and plots them.
+        Store the benchmark results.
+
+        Args:
+            benchmark_result (subprocess.CompletedProcess): Result of the subprocess.run call.
+            model (str): The name of the model to use.
+            media_file_path (str): The media file path.
         """
         for benchmark in self.benchmarks:
             if isinstance(benchmark, EvalRateBenchmark):
-                # Calculate the mean evaluation rate.
+                benchmark.process_eval_rate(benchmark_result)
+                benchmark.store_eval_rate(media_file_path)
+            elif isinstance(benchmark, LicensePlateBenchmark):
+                benchmark.store_license_plate(model, benchmark_result)
+            elif isinstance(benchmark, CallAudioBenchmark):
+                benchmark.store_transcript(model)
+                benchmark.store_call_notes(model, benchmark_result)
+                benchmark.print_call_notes()
+
+    def average_and_plot_benchmarks(self) -> None:
+        """
+        Calculate the average evaluation rates and plot them.
+        """
+        for benchmark in self.benchmarks:
+            if isinstance(benchmark, EvalRateBenchmark):
                 benchmark.average_rate()
-                # Visualize evaluation rates with a plot.
                 benchmark.eval_rate_plotter.plot(benchmark.eval_rates)

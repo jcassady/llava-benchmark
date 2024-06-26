@@ -1,82 +1,77 @@
 # Standard library imports.
+import os
 import re
 
-# Local library imports.
-from .benchmark import Benchmark
-
-
-class LicensePlateBenchmark(Benchmark):
+class LicensePlateBenchmark:
     """
     A benchmark class for license plate numbers.
+
+    Attributes:
+        current_license_plate_number (str): The current license plate number being processed.
+        license_plate_numbers (list): List of extracted license plate numbers.
+        model_license_plate_numbers (dict): Mapping of model names to license plate numbers.
     """
 
     def __init__(self):
         """
-        Initialize the benchmark with a processing function and two dictionaries:
-        - 'license_plate_numbers': This dictionary is used to store the processed
-                                   results from the benchmark.
-        Each processed result (a license plate number) is added as a key in this
-        dictionary.
-
-        - 'model_license_plate_numbers': This dictionary is used to store the
-                                         license plate numbers associated with
-                                         each model.
-        The 'store_license_plate' method populates this dictionary by adding the
-        model as the key and the 'license_plate_numbers' dictionary as its value.
+        Initialize LicensePlateBenchmark instance.
         """
-        super().__init__(self.process_license_plate_number)
+        self.current_license_plate_number = None
         self.license_plate_numbers = []
         self.model_license_plate_numbers = {}
 
-    def extract_license_plate_number(self, stdout):
+    @staticmethod
+    def media_file_path(media_file: str) -> str:
         """
-        Extracts the license plate number from the standard output.
+        Get the absolute path to a media file.
 
         Args:
-            stdout (str): The standard output which may contain the license
-            plate number.
+            media_file (str): The name of the media file.
 
         Returns:
-            str: The extracted license plate number if found, otherwise None.
+            str: Absolute path to the media file.
         """
-        pattern = r"[A-Z0-9]+(?:\s[A-Z0-9]+)*"
-        matches = re.findall(pattern, stdout)
-        return matches[-1].strip() if matches else None
+        return os.path.abspath(os.path.join("data", "images", media_file))
 
-    def process_license_plate_number(self, benchmark_result):
+    def extract_license_plate_number(self, stdout) -> str:
         """
-        Extracts the license plate number from the standard output of a subprocess
-        run command and prints it. If no license plate number is found, a message
-        is printed and None is returned.
+        Extract the license plate number from benchmark result output.
 
         Args:
-            benchmark_result (subprocess.CompletedProcess): The result object returned
-            by subprocess.run.
+            stdout (str): Benchmark result output.
 
         Returns:
-            str: The extracted license plate number, or None if no number was found.
+            str: Extracted license plate number or None if not found.
         """
-        license_plate_number = self.extract_license_plate_number(
+        pattern = r"failed to get console mode for stderr: The handle is invalid\." \
+                  r"\n(.*)"
+        match = re.search(pattern, stdout)
+        return match.group(1).strip() if match else None
+
+    def process_license_plate_number(self, benchmark_result: str) -> None:
+        """
+        Process the license plate number from benchmark result.
+
+        Args:
+            benchmark_result (str): Result of the benchmark execution.
+        """
+        self.current_license_plate_number = self.extract_license_plate_number(
             benchmark_result.stdout
         )
         print(
-            f"◽ Plate:\t"
-            f"{license_plate_number if license_plate_number else 'not found'} 🚗\n"
-        )
-        return license_plate_number
+            f"◽ Plate:\t{self.current_license_plate_number or 'not found'}\t🚗\n")
 
-    def store_license_plate(self, model, benchmark_result):
+    def store_license_plate(self, model: str, benchmark_result: str) -> None:
         """
-        Stores the license plate number for a given model. If a license plate number
-        is found in the benchmark result, it is added to the 'license_plate_numbers'
-        list and the 'model_license_plate_numbers' dictionary.
+        Store the license plate number for a specific model.
 
         Args:
-            model: The model to store the license plate numbers for.
-            benchmark_result (subprocess.CompletedProcess): The result object
-            returned by subprocess.run.
+            model (str): Model name.
+            benchmark_result (str): Result of the benchmark execution.
         """
-        license_plate_number = super().process(benchmark_result)
-        if license_plate_number is not None:
-            self.license_plate_numbers.append(license_plate_number)
+        self.process_license_plate_number(benchmark_result)
+        if self.current_license_plate_number is not None:
+            self.license_plate_numbers.append(
+                self.current_license_plate_number)
         self.model_license_plate_numbers[model] = self.license_plate_numbers
+

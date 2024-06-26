@@ -42,8 +42,9 @@ def test_eval_rate_benchmark_process(benchmark, benchmark_result, expected):
     # 2. "data/images/1.jpg": The path to the image file.
     # The result is then compared to the expected result to verify the
     # correctness of the store_eval_rate method.
-    result = benchmark.store_eval_rate(benchmark_result, "data/images/1.jpg")
+    benchmark.process_eval_rate(benchmark_result)
+    benchmark.store_eval_rate("data/images/1.jpg")
 
     # If the assertion fails, an AssertionError will be raised with a
     # message indicating the expected and actual results.
-    assert result == expected, f"Expected {expected}, but got {result}"
+    assert benchmark.current_eval_rate == expected, f"Expected {expected}, but got {benchmark.current_eval_rate}"
