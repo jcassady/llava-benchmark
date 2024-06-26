@@ -26,7 +26,7 @@ class EvalRatePlotter:
         upsampled_eval_rates = [rate for rate in eval_rates for _ in range(2)]
 
         print("\t\tY-axis: Evaluation Rates")
-        print("\t\tX-axis: Images")
+        print("\t\tX-axis: Media")
         print(asciichartpy.plot(upsampled_eval_rates, {"width": 40,
                                                        "height": 4,
                                                        "offset": 2,

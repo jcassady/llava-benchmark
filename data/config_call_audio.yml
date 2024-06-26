@@ -1,0 +1,19 @@
+# This YAML file contains the configuration for LLaVA benchmark's
+# call audio transcription and summarization (call notes) feature: 
+# 'models' lists the models to be benchmarked.
+# 'prompts' lists the prompts to be used for each model.
+# 'media' lists the call audio files to be used in the benchmark.
+
+models:
+  - llava:latest
+  # - llava-llama3:8b
+prompts:
+  - >-
+    Summarize the key points of this audio call
+    transcript in point form as call notes:
+media:
+  - 1.mp3
+  - 2.mp3
+  # - 3.mp3
+  # - 4.mp3
+  # - 5.mp3
