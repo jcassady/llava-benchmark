@@ -79,64 +79,21 @@
 <div class="viewcode-block" id="EvalRateProcessor">
 <a class="viewcode-back" href="../../../benchmarks.eval_rate_benchmark.html#benchmarks.eval_rate_benchmark.eval_rate_processor.EvalRateProcessor">[docs]</a>
 <span class="k">class</span> <span class="nc">EvalRateProcessor</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    A class used to process the evaluation rate from benchmark results.</span>
-
-<span class="sd">    ...</span>
-
-<span class="sd">    Methods</span>
-<span class="sd">    -------</span>
-<span class="sd">    process_eval_rate(benchmark_result):</span>
-<span class="sd">        Processes the evaluation rate from the benchmark result.</span>
-
-<span class="sd">    extract_eval_rate(benchmark_result):</span>
-<span class="sd">        Extracts the evaluation rate from the benchmark result.</span>
-
-<span class="sd">    average_eval_rates(eval_rates):</span>
-<span class="sd">        Calculates and prints the average of the evaluation rates.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="EvalRateProcessor.process_eval_rate">
 <a class="viewcode-back" href="../../../benchmarks.eval_rate_benchmark.html#benchmarks.eval_rate_benchmark.eval_rate_processor.EvalRateProcessor.process_eval_rate">[docs]</a>
-    <span class="k">def</span> <span class="nf">process_eval_rate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">benchmark_result</span><span class="p">):</span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">process_eval_rate</span><span class="p">(</span><span class="n">benchmark_result</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Processes the evaluation rate from the benchmark result.</span>
+<span class="sd">        Extract and process the evaluation rate from a benchmark result.</span>
 
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-<span class="sd">        benchmark_result : str</span>
-<span class="sd">            The benchmark result from which to extract the evaluation rate.</span>
+<span class="sd">        Args:</span>
+<span class="sd">            benchmark_result: Result of the subprocess.run call.</span>
 
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        list</span>
-<span class="sd">            A list of evaluation rates extracted from the benchmark result.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">eval_rate</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">extract_eval_rate</span><span class="p">(</span><span class="n">benchmark_result</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">eval_rate</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">rate</span> <span class="ow">in</span> <span class="n">eval_rate</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;◽ Tokens/s:</span><span class="se">\t</span><span class="si">{</span><span class="n">rate</span><span class="si">}</span><span class="se">\t</span><span class="s2">📈&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">eval_rate</span></div>
-
-
-<div class="viewcode-block" id="EvalRateProcessor.extract_eval_rate">
-<a class="viewcode-back" href="../../../benchmarks.eval_rate_benchmark.html#benchmarks.eval_rate_benchmark.eval_rate_processor.EvalRateProcessor.extract_eval_rate">[docs]</a>
-    <span class="k">def</span> <span class="nf">extract_eval_rate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">benchmark_result</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Extracts the evaluation rate from the benchmark result.</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-<span class="sd">        benchmark_result : str</span>
-<span class="sd">            The benchmark result from which to extract the evaluation rate.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        list</span>
-<span class="sd">            A list of evaluation rates extracted from the benchmark result.</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            list: The extracted evaluation rate in a list.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">eval_rate</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="n">rate</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="n">std_err</span> <span class="o">=</span> <span class="n">benchmark_result</span><span class="o">.</span><span class="n">stderr</span>
 
         <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">std_err</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">):</span>
@@ -144,28 +101,18 @@
                 <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;eval rate:\s+(\d+\.\d+)&quot;</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
                     <span class="n">rate</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
-                <span class="k">if</span> <span class="n">rate</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                     <span class="n">eval_rate</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rate</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">rate</span> <span class="ow">in</span> <span class="n">eval_rate</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;◽ Tokens/s:</span><span class="se">\t</span><span class="si">{</span><span class="n">rate</span><span class="si">}</span><span class="se">\t</span><span class="s2">📈&quot;</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">eval_rate</span></div>
 
 
 <div class="viewcode-block" id="EvalRateProcessor.average_eval_rates">
 <a class="viewcode-back" href="../../../benchmarks.eval_rate_benchmark.html#benchmarks.eval_rate_benchmark.eval_rate_processor.EvalRateProcessor.average_eval_rates">[docs]</a>
-    <span class="k">def</span> <span class="nf">average_eval_rates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">eval_rates</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Calculates and prints the average of the evaluation rates.</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-<span class="sd">        eval_rates : list</span>
-<span class="sd">            A list of evaluation rates.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        float</span>
-<span class="sd">            The average of the evaluation rates. Returns None if the list is empty.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">average_eval_rates</span><span class="p">(</span><span class="n">eval_rates</span><span class="p">):</span>
         <span class="n">average</span> <span class="o">=</span> <span class="p">(</span>
             <span class="nb">round</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">eval_rates</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">eval_rates</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">eval_rates</span>

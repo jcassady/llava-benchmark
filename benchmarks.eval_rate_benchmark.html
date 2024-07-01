@@ -59,7 +59,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="benchmarks.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="benchmarks.html#module-benchmarks.benchmark">benchmarks.benchmark module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarks.html#benchmarks-benchmark-module">benchmarks.benchmark module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="benchmarks.html#module-benchmarks.license_plate_benchmark">benchmarks.license_plate_benchmark module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="benchmarks.html#module-benchmarks">Module contents</a></li>
 </ul>
@@ -109,70 +109,21 @@
 <dt class="sig sig-object py" id="benchmarks.eval_rate_benchmark.eval_rate_processor.EvalRateProcessor">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">benchmarks.eval_rate_benchmark.eval_rate_processor.</span></span><span class="sig-name descname"><span class="pre">EvalRateProcessor</span></span><a class="reference internal" href="_modules/benchmarks/eval_rate_benchmark/eval_rate_processor.html#EvalRateProcessor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#benchmarks.eval_rate_benchmark.eval_rate_processor.EvalRateProcessor" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>A class used to process the evaluation rate from benchmark results.</p>
-<p>…</p>
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">process_eval_rate(benchmark_result):</span></span></dt>
-<dd><p>Processes the evaluation rate from the benchmark result.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">extract_eval_rate(benchmark_result):</span></span></dt>
-<dd><p>Extracts the evaluation rate from the benchmark result.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">average_eval_rates(eval_rates):</span></span></dt>
-<dd><p>Calculates and prints the average of the evaluation rates.</p>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="benchmarks.eval_rate_benchmark.eval_rate_processor.EvalRateProcessor.average_eval_rates">
-<span class="sig-name descname"><span class="pre">average_eval_rates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eval_rates</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/benchmarks/eval_rate_benchmark/eval_rate_processor.html#EvalRateProcessor.average_eval_rates"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#benchmarks.eval_rate_benchmark.eval_rate_processor.EvalRateProcessor.average_eval_rates" title="Link to this definition"></a></dt>
-<dd><p>Calculates and prints the average of the evaluation rates.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>eval_rates</strong> (<em>list</em>) – A list of evaluation rates.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The average of the evaluation rates. Returns None if the list is empty.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="benchmarks.eval_rate_benchmark.eval_rate_processor.EvalRateProcessor.extract_eval_rate">
-<span class="sig-name descname"><span class="pre">extract_eval_rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">benchmark_result</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/benchmarks/eval_rate_benchmark/eval_rate_processor.html#EvalRateProcessor.extract_eval_rate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#benchmarks.eval_rate_benchmark.eval_rate_processor.EvalRateProcessor.extract_eval_rate" title="Link to this definition"></a></dt>
-<dd><p>Extracts the evaluation rate from the benchmark result.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>benchmark_result</strong> (<em>str</em>) – The benchmark result from which to extract the evaluation rate.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A list of evaluation rates extracted from the benchmark result.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>list</p>
-</dd>
-</dl>
-</dd></dl>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">average_eval_rates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eval_rates</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/benchmarks/eval_rate_benchmark/eval_rate_processor.html#EvalRateProcessor.average_eval_rates"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#benchmarks.eval_rate_benchmark.eval_rate_processor.EvalRateProcessor.average_eval_rates" title="Link to this definition"></a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="benchmarks.eval_rate_benchmark.eval_rate_processor.EvalRateProcessor.process_eval_rate">
-<span class="sig-name descname"><span class="pre">process_eval_rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">benchmark_result</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/benchmarks/eval_rate_benchmark/eval_rate_processor.html#EvalRateProcessor.process_eval_rate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#benchmarks.eval_rate_benchmark.eval_rate_processor.EvalRateProcessor.process_eval_rate" title="Link to this definition"></a></dt>
-<dd><p>Processes the evaluation rate from the benchmark result.</p>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">process_eval_rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">benchmark_result</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/benchmarks/eval_rate_benchmark/eval_rate_processor.html#EvalRateProcessor.process_eval_rate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#benchmarks.eval_rate_benchmark.eval_rate_processor.EvalRateProcessor.process_eval_rate" title="Link to this definition"></a></dt>
+<dd><p>Extract and process the evaluation rate from a benchmark result.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>benchmark_result</strong> (<em>str</em>) – The benchmark result from which to extract the evaluation rate.</p>
+<dd class="field-odd"><p><strong>benchmark_result</strong> – Result of the subprocess.run call.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A list of evaluation rates extracted from the benchmark result.</p>
+<dd class="field-even"><p>The extracted evaluation rate in a list.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>list</p>

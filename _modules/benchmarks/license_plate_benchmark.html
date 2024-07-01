@@ -73,98 +73,96 @@
              
   <h1>Source code for benchmarks.license_plate_benchmark</h1><div class="highlight"><pre>
 <span></span><span class="c1"># Standard library imports.</span>
+<span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">re</span>
-
-<span class="c1"># Local library imports.</span>
-<span class="kn">from</span> <span class="nn">.benchmark</span> <span class="kn">import</span> <span class="n">Benchmark</span>
-
 
 <div class="viewcode-block" id="LicensePlateBenchmark">
 <a class="viewcode-back" href="../../benchmarks.html#benchmarks.license_plate_benchmark.LicensePlateBenchmark">[docs]</a>
-<span class="k">class</span> <span class="nc">LicensePlateBenchmark</span><span class="p">(</span><span class="n">Benchmark</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">LicensePlateBenchmark</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A benchmark class for license plate numbers.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        current_license_plate_number (str): The current license plate number being processed.</span>
+<span class="sd">        license_plate_numbers (list): List of extracted license plate numbers.</span>
+<span class="sd">        model_license_plate_numbers (dict): Mapping of model names to license plate numbers.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Initialize the benchmark with a processing function and two dictionaries:</span>
-<span class="sd">        - &#39;license_plate_numbers&#39;: This dictionary is used to store the processed</span>
-<span class="sd">                                   results from the benchmark.</span>
-<span class="sd">        Each processed result (a license plate number) is added as a key in this</span>
-<span class="sd">        dictionary.</span>
-
-<span class="sd">        - &#39;model_license_plate_numbers&#39;: This dictionary is used to store the</span>
-<span class="sd">                                         license plate numbers associated with</span>
-<span class="sd">                                         each model.</span>
-<span class="sd">        The &#39;store_license_plate&#39; method populates this dictionary by adding the</span>
-<span class="sd">        model as the key and the &#39;license_plate_numbers&#39; dictionary as its value.</span>
+<span class="sd">        Initialize LicensePlateBenchmark instance.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">process_license_plate_number</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current_license_plate_number</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">license_plate_numbers</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">model_license_plate_numbers</span> <span class="o">=</span> <span class="p">{}</span>
 
-<div class="viewcode-block" id="LicensePlateBenchmark.extract_license_plate_number">
-<a class="viewcode-back" href="../../benchmarks.html#benchmarks.license_plate_benchmark.LicensePlateBenchmark.extract_license_plate_number">[docs]</a>
-    <span class="k">def</span> <span class="nf">extract_license_plate_number</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stdout</span><span class="p">):</span>
+<div class="viewcode-block" id="LicensePlateBenchmark.media_file_path">
+<a class="viewcode-back" href="../../benchmarks.html#benchmarks.license_plate_benchmark.LicensePlateBenchmark.media_file_path">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">media_file_path</span><span class="p">(</span><span class="n">media_file</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Extracts the license plate number from the standard output.</span>
+<span class="sd">        Get the absolute path to a media file.</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            stdout (str): The standard output which may contain the license</span>
-<span class="sd">            plate number.</span>
+<span class="sd">            media_file (str): The name of the media file.</span>
 
 <span class="sd">        Returns:</span>
-<span class="sd">            str: The extracted license plate number if found, otherwise None.</span>
+<span class="sd">            str: Absolute path to the media file.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;[A-Z0-9]+(?:\s[A-Z0-9]+)*&quot;</span>
-        <span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">stdout</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">matches</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">if</span> <span class="n">matches</span> <span class="k">else</span> <span class="kc">None</span></div>
+        <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;images&quot;</span><span class="p">,</span> <span class="n">media_file</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="LicensePlateBenchmark.extract_license_plate_number">
+<a class="viewcode-back" href="../../benchmarks.html#benchmarks.license_plate_benchmark.LicensePlateBenchmark.extract_license_plate_number">[docs]</a>
+    <span class="k">def</span> <span class="nf">extract_license_plate_number</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stdout</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Extract the license plate number from benchmark result output.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            stdout (str): Benchmark result output.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: Extracted license plate number or None if not found.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;failed to get console mode for stderr: The handle is invalid\.&quot;</span> \
+                  <span class="sa">r</span><span class="s2">&quot;\n(.*)&quot;</span>
+        <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">stdout</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">if</span> <span class="n">match</span> <span class="k">else</span> <span class="kc">None</span></div>
 
 
 <div class="viewcode-block" id="LicensePlateBenchmark.process_license_plate_number">
 <a class="viewcode-back" href="../../benchmarks.html#benchmarks.license_plate_benchmark.LicensePlateBenchmark.process_license_plate_number">[docs]</a>
-    <span class="k">def</span> <span class="nf">process_license_plate_number</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">benchmark_result</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">process_license_plate_number</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">benchmark_result</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Extracts the license plate number from the standard output of a subprocess</span>
-<span class="sd">        run command and prints it. If no license plate number is found, a message</span>
-<span class="sd">        is printed and None is returned.</span>
+<span class="sd">        Process the license plate number from benchmark result.</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            benchmark_result (subprocess.CompletedProcess): The result object returned</span>
-<span class="sd">            by subprocess.run.</span>
-
-<span class="sd">        Returns:</span>
-<span class="sd">            str: The extracted license plate number, or None if no number was found.</span>
+<span class="sd">            benchmark_result (str): Result of the benchmark execution.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">license_plate_number</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">extract_license_plate_number</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current_license_plate_number</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">extract_license_plate_number</span><span class="p">(</span>
             <span class="n">benchmark_result</span><span class="o">.</span><span class="n">stdout</span>
         <span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span>
-            <span class="sa">f</span><span class="s2">&quot;◽ Plate:</span><span class="se">\t</span><span class="s2">&quot;</span>
-            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">license_plate_number</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">license_plate_number</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;not found&#39;</span><span class="si">}</span><span class="s2"> 🚗</span><span class="se">\n</span><span class="s2">&quot;</span>
-        <span class="p">)</span>
-        <span class="k">return</span> <span class="n">license_plate_number</span></div>
+            <span class="sa">f</span><span class="s2">&quot;◽ Plate:</span><span class="se">\t</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">current_license_plate_number</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s1">&#39;not found&#39;</span><span class="si">}</span><span class="se">\t</span><span class="s2">🚗</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="LicensePlateBenchmark.store_license_plate">
 <a class="viewcode-back" href="../../benchmarks.html#benchmarks.license_plate_benchmark.LicensePlateBenchmark.store_license_plate">[docs]</a>
-    <span class="k">def</span> <span class="nf">store_license_plate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">benchmark_result</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">store_license_plate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">benchmark_result</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Stores the license plate number for a given model. If a license plate number</span>
-<span class="sd">        is found in the benchmark result, it is added to the &#39;license_plate_numbers&#39;</span>
-<span class="sd">        list and the &#39;model_license_plate_numbers&#39; dictionary.</span>
+<span class="sd">        Store the license plate number for a specific model.</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            model: The model to store the license plate numbers for.</span>
-<span class="sd">            benchmark_result (subprocess.CompletedProcess): The result object</span>
-<span class="sd">            returned by subprocess.run.</span>
+<span class="sd">            model (str): Model name.</span>
+<span class="sd">            benchmark_result (str): Result of the benchmark execution.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">license_plate_number</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">process</span><span class="p">(</span><span class="n">benchmark_result</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">license_plate_number</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">license_plate_numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">license_plate_number</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">process_license_plate_number</span><span class="p">(</span><span class="n">benchmark_result</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_license_plate_number</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">license_plate_numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">current_license_plate_number</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">model_license_plate_numbers</span><span class="p">[</span><span class="n">model</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">license_plate_numbers</span></div>
 </div>
+
 
 </pre></div>
 

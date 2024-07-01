@@ -52,17 +52,14 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-benchmarks.benchmark">benchmarks.benchmark module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#benchmarks.benchmark.Benchmark"><code class="docutils literal notranslate"><span class="pre">Benchmark</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#benchmarks.benchmark.Benchmark.method"><code class="docutils literal notranslate"><span class="pre">Benchmark.method</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#benchmarks.benchmark.Benchmark.process"><code class="docutils literal notranslate"><span class="pre">Benchmark.process()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#benchmarks-benchmark-module">benchmarks.benchmark module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-benchmarks.license_plate_benchmark">benchmarks.license_plate_benchmark module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#benchmarks.license_plate_benchmark.LicensePlateBenchmark"><code class="docutils literal notranslate"><span class="pre">LicensePlateBenchmark</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#benchmarks.license_plate_benchmark.LicensePlateBenchmark.current_license_plate_number"><code class="docutils literal notranslate"><span class="pre">LicensePlateBenchmark.current_license_plate_number</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#benchmarks.license_plate_benchmark.LicensePlateBenchmark.license_plate_numbers"><code class="docutils literal notranslate"><span class="pre">LicensePlateBenchmark.license_plate_numbers</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#benchmarks.license_plate_benchmark.LicensePlateBenchmark.model_license_plate_numbers"><code class="docutils literal notranslate"><span class="pre">LicensePlateBenchmark.model_license_plate_numbers</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#benchmarks.license_plate_benchmark.LicensePlateBenchmark.extract_license_plate_number"><code class="docutils literal notranslate"><span class="pre">LicensePlateBenchmark.extract_license_plate_number()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#benchmarks.license_plate_benchmark.LicensePlateBenchmark.media_file_path"><code class="docutils literal notranslate"><span class="pre">LicensePlateBenchmark.media_file_path()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#benchmarks.license_plate_benchmark.LicensePlateBenchmark.process_license_plate_number"><code class="docutils literal notranslate"><span class="pre">LicensePlateBenchmark.process_license_plate_number()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#benchmarks.license_plate_benchmark.LicensePlateBenchmark.store_license_plate"><code class="docutils literal notranslate"><span class="pre">LicensePlateBenchmark.store_license_plate()</span></code></a></li>
 </ul>
@@ -112,7 +109,6 @@
 <li class="toctree-l2"><a class="reference internal" href="benchmarks.eval_rate_benchmark.html#module-benchmarks.eval_rate_benchmark.eval_rate_processor">benchmarks.eval_rate_benchmark.eval_rate_processor module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="benchmarks.eval_rate_benchmark.html#benchmarks.eval_rate_benchmark.eval_rate_processor.EvalRateProcessor"><code class="docutils literal notranslate"><span class="pre">EvalRateProcessor</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="benchmarks.eval_rate_benchmark.html#benchmarks.eval_rate_benchmark.eval_rate_processor.EvalRateProcessor.average_eval_rates"><code class="docutils literal notranslate"><span class="pre">EvalRateProcessor.average_eval_rates()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="benchmarks.eval_rate_benchmark.html#benchmarks.eval_rate_benchmark.eval_rate_processor.EvalRateProcessor.extract_eval_rate"><code class="docutils literal notranslate"><span class="pre">EvalRateProcessor.extract_eval_rate()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="benchmarks.eval_rate_benchmark.html#benchmarks.eval_rate_benchmark.eval_rate_processor.EvalRateProcessor.process_eval_rate"><code class="docutils literal notranslate"><span class="pre">EvalRateProcessor.process_eval_rate()</span></code></a></li>
 </ul>
 </li>
@@ -127,61 +123,76 @@
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
 </section>
-<section id="module-benchmarks.benchmark">
-<span id="benchmarks-benchmark-module"></span><h2>benchmarks.benchmark module<a class="headerlink" href="#module-benchmarks.benchmark" title="Link to this heading"></a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="benchmarks.benchmark.Benchmark">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">benchmarks.benchmark.</span></span><span class="sig-name descname"><span class="pre">Benchmark</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/benchmarks/benchmark.html#Benchmark"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#benchmarks.benchmark.Benchmark" title="Link to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>A general-purpose class for processing benchmark results.</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="benchmarks.benchmark.Benchmark.method">
-<span class="sig-name descname"><span class="pre">method</span></span><a class="headerlink" href="#benchmarks.benchmark.Benchmark.method" title="Link to this definition"></a></dt>
-<dd><p>A function to process benchmark results.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>function</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="benchmarks.benchmark.Benchmark.process">
-<span class="sig-name descname"><span class="pre">process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">benchmark_result</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/benchmarks/benchmark.html#Benchmark.process"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#benchmarks.benchmark.Benchmark.process" title="Link to this definition"></a></dt>
-<dd><p>Processes a benchmark result using the function stored in self.method.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>benchmark_result</strong> – The benchmark result to process.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The result of calling self.method with benchmark_result.</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
+<section id="benchmarks-benchmark-module">
+<h2>benchmarks.benchmark module<a class="headerlink" href="#benchmarks-benchmark-module" title="Link to this heading"></a></h2>
 </section>
 <section id="module-benchmarks.license_plate_benchmark">
 <span id="benchmarks-license-plate-benchmark-module"></span><h2>benchmarks.license_plate_benchmark module<a class="headerlink" href="#module-benchmarks.license_plate_benchmark" title="Link to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="benchmarks.license_plate_benchmark.LicensePlateBenchmark">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">benchmarks.license_plate_benchmark.</span></span><span class="sig-name descname"><span class="pre">LicensePlateBenchmark</span></span><a class="reference internal" href="_modules/benchmarks/license_plate_benchmark.html#LicensePlateBenchmark"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#benchmarks.license_plate_benchmark.LicensePlateBenchmark" title="Link to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#benchmarks.benchmark.Benchmark" title="benchmarks.benchmark.Benchmark"><code class="xref py py-class docutils literal notranslate"><span class="pre">Benchmark</span></code></a></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>A benchmark class for license plate numbers.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="benchmarks.license_plate_benchmark.LicensePlateBenchmark.current_license_plate_number">
+<span class="sig-name descname"><span class="pre">current_license_plate_number</span></span><a class="headerlink" href="#benchmarks.license_plate_benchmark.LicensePlateBenchmark.current_license_plate_number" title="Link to this definition"></a></dt>
+<dd><p>The current license plate number being processed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="benchmarks.license_plate_benchmark.LicensePlateBenchmark.license_plate_numbers">
+<span class="sig-name descname"><span class="pre">license_plate_numbers</span></span><a class="headerlink" href="#benchmarks.license_plate_benchmark.LicensePlateBenchmark.license_plate_numbers" title="Link to this definition"></a></dt>
+<dd><p>List of extracted license plate numbers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="benchmarks.license_plate_benchmark.LicensePlateBenchmark.model_license_plate_numbers">
+<span class="sig-name descname"><span class="pre">model_license_plate_numbers</span></span><a class="headerlink" href="#benchmarks.license_plate_benchmark.LicensePlateBenchmark.model_license_plate_numbers" title="Link to this definition"></a></dt>
+<dd><p>Mapping of model names to license plate numbers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="benchmarks.license_plate_benchmark.LicensePlateBenchmark.extract_license_plate_number">
-<span class="sig-name descname"><span class="pre">extract_license_plate_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stdout</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/benchmarks/license_plate_benchmark.html#LicensePlateBenchmark.extract_license_plate_number"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#benchmarks.license_plate_benchmark.LicensePlateBenchmark.extract_license_plate_number" title="Link to this definition"></a></dt>
-<dd><p>Extracts the license plate number from the standard output.</p>
+<span class="sig-name descname"><span class="pre">extract_license_plate_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stdout</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/benchmarks/license_plate_benchmark.html#LicensePlateBenchmark.extract_license_plate_number"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#benchmarks.license_plate_benchmark.LicensePlateBenchmark.extract_license_plate_number" title="Link to this definition"></a></dt>
+<dd><p>Extract the license plate number from benchmark result output.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>stdout</strong> (<em>str</em>) – The standard output which may contain the license</p></li>
-<li><p><strong>number.</strong> (<em>plate</em>)</p></li>
-</ul>
+<dd class="field-odd"><p><strong>stdout</strong> (<em>str</em>) – Benchmark result output.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The extracted license plate number if found, otherwise None.</p>
+<dd class="field-even"><p>Extracted license plate number or None if not found.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="benchmarks.license_plate_benchmark.LicensePlateBenchmark.media_file_path">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media_file_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">media_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/benchmarks/license_plate_benchmark.html#LicensePlateBenchmark.media_file_path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#benchmarks.license_plate_benchmark.LicensePlateBenchmark.media_file_path" title="Link to this definition"></a></dt>
+<dd><p>Get the absolute path to a media file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>media_file</strong> (<em>str</em>) – The name of the media file.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Absolute path to the media file.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>str</p>
@@ -191,38 +202,24 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="benchmarks.license_plate_benchmark.LicensePlateBenchmark.process_license_plate_number">
-<span class="sig-name descname"><span class="pre">process_license_plate_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">benchmark_result</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/benchmarks/license_plate_benchmark.html#LicensePlateBenchmark.process_license_plate_number"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#benchmarks.license_plate_benchmark.LicensePlateBenchmark.process_license_plate_number" title="Link to this definition"></a></dt>
-<dd><p>Extracts the license plate number from the standard output of a subprocess
-run command and prints it. If no license plate number is found, a message
-is printed and None is returned.</p>
+<span class="sig-name descname"><span class="pre">process_license_plate_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">benchmark_result</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/benchmarks/license_plate_benchmark.html#LicensePlateBenchmark.process_license_plate_number"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#benchmarks.license_plate_benchmark.LicensePlateBenchmark.process_license_plate_number" title="Link to this definition"></a></dt>
+<dd><p>Process the license plate number from benchmark result.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>benchmark_result</strong> (<em>subprocess.CompletedProcess</em>) – The result object returned</p></li>
-<li><p><strong>subprocess.run.</strong> (<em>by</em>)</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The extracted license plate number, or None if no number was found.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>str</p>
+<dd class="field-odd"><p><strong>benchmark_result</strong> (<em>str</em>) – Result of the benchmark execution.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="benchmarks.license_plate_benchmark.LicensePlateBenchmark.store_license_plate">
-<span class="sig-name descname"><span class="pre">store_license_plate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">benchmark_result</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/benchmarks/license_plate_benchmark.html#LicensePlateBenchmark.store_license_plate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#benchmarks.license_plate_benchmark.LicensePlateBenchmark.store_license_plate" title="Link to this definition"></a></dt>
-<dd><p>Stores the license plate number for a given model. If a license plate number
-is found in the benchmark result, it is added to the ‘license_plate_numbers’
-list and the ‘model_license_plate_numbers’ dictionary.</p>
+<span class="sig-name descname"><span class="pre">store_license_plate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">benchmark_result</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/benchmarks/license_plate_benchmark.html#LicensePlateBenchmark.store_license_plate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#benchmarks.license_plate_benchmark.LicensePlateBenchmark.store_license_plate" title="Link to this definition"></a></dt>
+<dd><p>Store the license plate number for a specific model.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>model</strong> – The model to store the license plate numbers for.</p></li>
-<li><p><strong>benchmark_result</strong> (<em>subprocess.CompletedProcess</em>) – The result object</p></li>
-<li><p><strong>subprocess.run.</strong> (<em>returned by</em>)</p></li>
+<li><p><strong>model</strong> (<em>str</em>) – Model name.</p></li>
+<li><p><strong>benchmark_result</strong> (<em>str</em>) – Result of the benchmark execution.</p></li>
 </ul>
 </dd>
 </dl>
