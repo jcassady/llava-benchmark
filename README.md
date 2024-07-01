@@ -32,8 +32,8 @@
 
 ## AI Benchmarking Tool
 
-`llava-benchmark` is a general purpose benchmarking tool designed to evaluate AI
-image recognition capabilities of [LLaVA](https://github.com/haotian-liu/LLaVA)
+`llava-benchmark` is a general purpose benchmarking tool designed to evaluate the
+image and audio processing capabilities of [LLaVA](https://github.com/haotian-liu/LLaVA)
 models with [Ollama](https://ollama.com).
 
 ### Included Benchmarks
