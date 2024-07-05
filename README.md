@@ -38,11 +38,11 @@ models with [Ollama](https://ollama.com).
 
 ### Included Benchmarks
 * `EvalRateBenchmark`: Measure model image processing speed 📈 
-* *  Powered by [Ollama](https://ollama.com/) timing metrics
+  *  Powered by [Ollama](https://ollama.com/) timing metrics
 * `LicensePlateBenchmark`: Extract license plate numbers from processed images 🚗
-* * Powered by [LLaVA](https://llava-vl.github.io/) **Optical Character Recognition (OCR)**
+  * Powered by [LLaVA](https://llava-vl.github.io/) **Optical Character Recognition (OCR)**
 * `CallAudioBenchmark`: Transcribe phone calls to summarized call notes from audio files 📱
-* * Powered by OpenAI's [Whisper](https://github.com/openai/whisper) **Automatic Speech Recognition (ASR)**
+  * Powered by OpenAI's [Whisper](https://github.com/openai/whisper) **Automatic Speech Recognition (ASR)**
     and [LLaVA](https://llava-vl.github.io/) for call notes summarization
 
 By running these benchmarks, you can quickly assess how well different `LLaVA` models
