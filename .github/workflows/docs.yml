@@ -4,9 +4,13 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'docs/**' # Only trigger the workflow if files in the docs directory change
   pull_request:
     branches:
       - main
+    paths:
+      - 'docs/**' # Only trigger the workflow if files in the docs directory change
 
 jobs:
   build_docs:
