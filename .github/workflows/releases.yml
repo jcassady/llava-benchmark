@@ -1,0 +1,58 @@
+name: Build and deploy release
+
+on:
+    pull_request:
+        branches:
+            - main
+
+jobs:
+  zip:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install zip
+        run: sudo apt-get install zip
+
+      - name: Archive llava-benchmark files
+        run: |
+          zip -r llava-benchmark_${{ github.sha }}.zip .
+
+      - name: Upload archived files
+        uses: actions/upload-artifact@v4
+        with:
+          name: llava-benchmark_${{ github.sha }}.zip
+          path: llava-benchmark_${{ github.sha }}.zip
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: zip
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Get tag name from ref
+        id: get_tag
+        run: echo "tag=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.get_tag.outputs.tag }}
+          release_name: Release ${{ steps.get_tag.outputs.tag }}
+          draft: false
+          prerelease: false
+
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: llava-benchmark_${{ github.sha }}.zip
+          asset_name: llava-benchmark_${{ github.sha }}.zip
+          asset_content_type: application/zip
