@@ -4,14 +4,6 @@ tests package
 Submodules
 ----------
 
-tests.test\_benchmark module
-----------------------------
-
-.. automodule:: tests.test_benchmark
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 tests.test\_eval\_rate\_benchmark module
 ----------------------------------------
 

@@ -12,10 +12,10 @@ Subpackages
 Submodules
 ----------
 
-benchmarks.benchmark module
----------------------------
+benchmarks.call\_audio\_benchmark module
+----------------------------------------
 
-.. automodule:: benchmarks.benchmark
+.. automodule:: benchmarks.call_audio_benchmark
    :members:
    :undoc-members:
    :show-inheritance:
