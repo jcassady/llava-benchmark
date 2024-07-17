@@ -77,9 +77,6 @@
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
 </section>
-<section id="tests-test-benchmark-module">
-<h2>tests.test_benchmark module<a class="headerlink" href="#tests-test-benchmark-module" title="Link to this heading"></a></h2>
-</section>
 <section id="tests-test-eval-rate-benchmark-module">
 <h2>tests.test_eval_rate_benchmark module<a class="headerlink" href="#tests-test-eval-rate-benchmark-module" title="Link to this heading"></a></h2>
 </section>
@@ -88,18 +85,6 @@
 </section>
 <section id="module-tests">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-tests" title="Link to this heading"></a></h2>
-<p>This __init__.py file marks the ‘tests’ directory as a Python package, enabling
-it to be imported as a module.</p>
-<p>In the context of pytest and this project:
-1. If tests need to import the ‘EvalRateBenchmark’ and ‘LicensePlateBenchmark’</p>
-<blockquote>
-<div><p>classes from the ‘benchmarks’ module, this directory needs to be a package
-for these imports to work correctly.</p>
-</div></blockquote>
-<ol class="arabic simple" start="2">
-<li><p>If tests are run with ‘python -m pytest’, this directory needs to be a
-package because the ‘-m’ option runs Python modules.</p></li>
-</ol>
 </section>
 </section>
 
@@ -111,7 +96,7 @@ package because the ‘-m’ option runs Python modules.</p></li>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024, Deva.</p>
+    <p>&#169; Copyright 2024, llava-benchmark.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

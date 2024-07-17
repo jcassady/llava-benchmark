@@ -52,7 +52,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#benchmarks-benchmark-module">benchmarks.benchmark module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#benchmarks-call-audio-benchmark-module">benchmarks.call_audio_benchmark module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-benchmarks.license_plate_benchmark">benchmarks.license_plate_benchmark module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#benchmarks.license_plate_benchmark.LicensePlateBenchmark"><code class="docutils literal notranslate"><span class="pre">LicensePlateBenchmark</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#benchmarks.license_plate_benchmark.LicensePlateBenchmark.current_license_plate_number"><code class="docutils literal notranslate"><span class="pre">LicensePlateBenchmark.current_license_plate_number</span></code></a></li>
@@ -123,8 +123,8 @@
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
 </section>
-<section id="benchmarks-benchmark-module">
-<h2>benchmarks.benchmark module<a class="headerlink" href="#benchmarks-benchmark-module" title="Link to this heading"></a></h2>
+<section id="benchmarks-call-audio-benchmark-module">
+<h2>benchmarks.call_audio_benchmark module<a class="headerlink" href="#benchmarks-call-audio-benchmark-module" title="Link to this heading"></a></h2>
 </section>
 <section id="module-benchmarks.license_plate_benchmark">
 <span id="benchmarks-license-plate-benchmark-module"></span><h2>benchmarks.license_plate_benchmark module<a class="headerlink" href="#module-benchmarks.license_plate_benchmark" title="Link to this heading"></a></h2>
@@ -230,24 +230,6 @@
 </section>
 <section id="module-benchmarks">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-benchmarks" title="Link to this heading"></a></h2>
-<p>This __init__.py file marks the ‘benchmarks’ directory as a Python package.</p>
-<p>In the context of this project:
-1. The ‘benchmarks’ module: This module contains two classes:</p>
-<blockquote>
-<div><ul class="simple">
-<li><dl class="simple">
-<dt>‘EvalRateBenchmark’: This class is used for evaluating the rate of a model.</dt><dd><p>It has methods for processing evaluation rates and calculating their average.</p>
-</dd>
-</dl>
-</li>
-<li><p>‘LicensePlateBenchmark’: This class is used for benchmarking license plate numbers. It has methods for extracting and processing license plate numbers from the standard output of a subprocess run command.</p></li>
-</ul>
-</div></blockquote>
-<ol class="arabic simple" start="2">
-<li><p>Usage in ‘llava_benchmark.py’ script: The ‘llava_benchmark.py’ script imports these
-classes and creates their instances. These instances are then used to run benchmarks
-and store the results.</p></li>
-</ol>
 </section>
 </section>
 
@@ -262,7 +244,7 @@ and store the results.</p></li>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024, Deva.</p>
+    <p>&#169; Copyright 2024, llava-benchmark.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
