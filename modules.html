@@ -48,8 +48,27 @@
 <li class="toctree-l1"><a class="reference internal" href="benchmarks.html">benchmarks package</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">modules package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#modules-llava-benchmark-module">modules.llava_benchmark module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#modules-ollama-module">modules.ollama module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-modules.llava_benchmark">modules.llava_benchmark module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modules.llava_benchmark.LlavaBenchmark"><code class="docutils literal notranslate"><span class="pre">LlavaBenchmark</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#modules.llava_benchmark.LlavaBenchmark.benchmarks"><code class="docutils literal notranslate"><span class="pre">LlavaBenchmark.benchmarks</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modules.llava_benchmark.LlavaBenchmark.average_and_plot_benchmarks"><code class="docutils literal notranslate"><span class="pre">LlavaBenchmark.average_and_plot_benchmarks()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modules.llava_benchmark.LlavaBenchmark.process_media"><code class="docutils literal notranslate"><span class="pre">LlavaBenchmark.process_media()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modules.llava_benchmark.LlavaBenchmark.store_results"><code class="docutils literal notranslate"><span class="pre">LlavaBenchmark.store_results()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-modules.ollama">modules.ollama module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modules.ollama.Ollama"><code class="docutils literal notranslate"><span class="pre">Ollama</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#modules.ollama.Ollama.is_binary_installed"><code class="docutils literal notranslate"><span class="pre">Ollama.is_binary_installed()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modules.ollama.Ollama.is_model_installed"><code class="docutils literal notranslate"><span class="pre">Ollama.is_model_installed()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modules.ollama.Ollama.print_prompt"><code class="docutils literal notranslate"><span class="pre">Ollama.print_prompt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modules.ollama.Ollama.read_yaml"><code class="docutils literal notranslate"><span class="pre">Ollama.read_yaml()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modules.ollama.Ollama.run_benchmark"><code class="docutils literal notranslate"><span class="pre">Ollama.run_benchmark()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#module-modules">Module contents</a></li>
 </ul>
 </li>
@@ -84,11 +103,153 @@
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
 </section>
-<section id="modules-llava-benchmark-module">
-<h2>modules.llava_benchmark module<a class="headerlink" href="#modules-llava-benchmark-module" title="Link to this heading"></a></h2>
+<section id="module-modules.llava_benchmark">
+<span id="modules-llava-benchmark-module"></span><h2>modules.llava_benchmark module<a class="headerlink" href="#module-modules.llava_benchmark" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="modules.llava_benchmark.LlavaBenchmark">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modules.llava_benchmark.</span></span><span class="sig-name descname"><span class="pre">LlavaBenchmark</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">benchmarks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modules/llava_benchmark.html#LlavaBenchmark"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modules.llava_benchmark.LlavaBenchmark" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>LLaVA Benchmark class for processing media and storing results.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modules.llava_benchmark.LlavaBenchmark.benchmarks">
+<span class="sig-name descname"><span class="pre">benchmarks</span></span><a class="headerlink" href="#modules.llava_benchmark.LlavaBenchmark.benchmarks" title="Link to this definition"></a></dt>
+<dd><p>List of benchmark instances.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modules.llava_benchmark.LlavaBenchmark.average_and_plot_benchmarks">
+<span class="sig-name descname"><span class="pre">average_and_plot_benchmarks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="benchmarks.eval_rate_benchmark.html#benchmarks.eval_rate_benchmark.eval_rate_plotter.EvalRatePlotter.None" title="benchmarks.eval_rate_benchmark.eval_rate_plotter.EvalRatePlotter.None"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/modules/llava_benchmark.html#LlavaBenchmark.average_and_plot_benchmarks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modules.llava_benchmark.LlavaBenchmark.average_and_plot_benchmarks" title="Link to this definition"></a></dt>
+<dd><p>Calculate the average evaluation rates and plot them.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modules.llava_benchmark.LlavaBenchmark.process_media">
+<span class="sig-name descname"><span class="pre">process_media</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">media_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="reference internal" href="_modules/modules/llava_benchmark.html#LlavaBenchmark.process_media"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modules.llava_benchmark.LlavaBenchmark.process_media" title="Link to this definition"></a></dt>
+<dd><p>Process media file and return relevant information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>media_file</strong> (<em>str</em>) – Path to the media file.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple containing transcript (str) and media file path (str).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modules.llava_benchmark.LlavaBenchmark.store_results">
+<span class="sig-name descname"><span class="pre">store_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">benchmark_result</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">media_file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="benchmarks.eval_rate_benchmark.html#benchmarks.eval_rate_benchmark.eval_rate_plotter.EvalRatePlotter.None" title="benchmarks.eval_rate_benchmark.eval_rate_plotter.EvalRatePlotter.None"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/modules/llava_benchmark.html#LlavaBenchmark.store_results"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modules.llava_benchmark.LlavaBenchmark.store_results" title="Link to this definition"></a></dt>
+<dd><p>Store the benchmark results.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>benchmark_result</strong> (<em>subprocess.CompletedProcess</em>) – Result of the subprocess.run call.</p></li>
+<li><p><strong>model</strong> (<em>str</em>) – The name of the model to use.</p></li>
+<li><p><strong>media_file_path</strong> (<em>str</em>) – The media file path.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
-<section id="modules-ollama-module">
-<h2>modules.ollama module<a class="headerlink" href="#modules-ollama-module" title="Link to this heading"></a></h2>
+<section id="module-modules.ollama">
+<span id="modules-ollama-module"></span><h2>modules.ollama module<a class="headerlink" href="#module-modules.ollama" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="modules.ollama.Ollama">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modules.ollama.</span></span><span class="sig-name descname"><span class="pre">Ollama</span></span><a class="reference internal" href="_modules/modules/ollama.html#Ollama"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modules.ollama.Ollama" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="modules.ollama.Ollama.is_binary_installed">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_binary_installed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modules/ollama.html#Ollama.is_binary_installed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modules.ollama.Ollama.is_binary_installed" title="Link to this definition"></a></dt>
+<dd><p>Checks if the ollama binary is present on the system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if ollama binary is present, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modules.ollama.Ollama.is_model_installed">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_model_installed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modules/ollama.html#Ollama.is_model_installed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modules.ollama.Ollama.is_model_installed" title="Link to this definition"></a></dt>
+<dd><p>Checks if a given model is installed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>model</strong> (<em>str</em>) – The name of the model to check.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the model is installed, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modules.ollama.Ollama.print_prompt">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">print_prompt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prompt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="benchmarks.eval_rate_benchmark.html#benchmarks.eval_rate_benchmark.eval_rate_plotter.EvalRatePlotter.None" title="benchmarks.eval_rate_benchmark.eval_rate_plotter.EvalRatePlotter.None"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/modules/ollama.html#Ollama.print_prompt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modules.ollama.Ollama.print_prompt" title="Link to this definition"></a></dt>
+<dd><p>Print the formatted prompt.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>prompt</strong> (<em>str</em>) – The prompt to print.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modules.ollama.Ollama.read_yaml">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">read_yaml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yaml_file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modules/ollama.html#Ollama.read_yaml"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modules.ollama.Ollama.read_yaml" title="Link to this definition"></a></dt>
+<dd><p>Reads a YAML file and returns its content as a dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>yaml_file_path</strong> (<em>str</em>) – Path to the YAML file.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Parsed YAML data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modules.ollama.Ollama.run_benchmark">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">run_benchmark</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prompt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">media_file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">CompletedProcess</span></span></span><a class="reference internal" href="_modules/modules/ollama.html#Ollama.run_benchmark"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modules.ollama.Ollama.run_benchmark" title="Link to this definition"></a></dt>
+<dd><p>Run a benchmark using the specified model, prompt, and media file path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<em>str</em>) – The name of the model to use.</p></li>
+<li><p><strong>prompt</strong> (<em>str</em>) – The prompt for the benchmark.</p></li>
+<li><p><strong>media_file_path</strong> (<em>str</em>) – The path to the media file.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The result of the benchmark execution.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>subprocess.CompletedProcess</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 <section id="module-modules">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-modules" title="Link to this heading"></a></h2>

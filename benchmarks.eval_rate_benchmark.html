@@ -50,16 +50,16 @@
 <li class="toctree-l2 current"><a class="reference internal" href="benchmarks.html#subpackages">Subpackages</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">benchmarks.eval_rate_benchmark package</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#benchmarks-eval-rate-benchmark-eval-rate-benchmark-module">benchmarks.eval_rate_benchmark.eval_rate_benchmark module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#benchmarks-eval-rate-benchmark-eval-rate-plotter-module">benchmarks.eval_rate_benchmark.eval_rate_plotter module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-benchmarks.eval_rate_benchmark.eval_rate_benchmark">benchmarks.eval_rate_benchmark.eval_rate_benchmark module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-benchmarks.eval_rate_benchmark.eval_rate_plotter">benchmarks.eval_rate_benchmark.eval_rate_plotter module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-benchmarks.eval_rate_benchmark.eval_rate_processor">benchmarks.eval_rate_benchmark.eval_rate_processor module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-contents">Module contents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-benchmarks.eval_rate_benchmark">Module contents</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="benchmarks.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="benchmarks.html#benchmarks-call-audio-benchmark-module">benchmarks.call_audio_benchmark module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarks.html#module-benchmarks.call_audio_benchmark">benchmarks.call_audio_benchmark module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="benchmarks.html#module-benchmarks.license_plate_benchmark">benchmarks.license_plate_benchmark module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="benchmarks.html#module-benchmarks">Module contents</a></li>
 </ul>
@@ -97,11 +97,69 @@
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
 </section>
-<section id="benchmarks-eval-rate-benchmark-eval-rate-benchmark-module">
-<h2>benchmarks.eval_rate_benchmark.eval_rate_benchmark module<a class="headerlink" href="#benchmarks-eval-rate-benchmark-eval-rate-benchmark-module" title="Link to this heading"></a></h2>
+<section id="module-benchmarks.eval_rate_benchmark.eval_rate_benchmark">
+<span id="benchmarks-eval-rate-benchmark-eval-rate-benchmark-module"></span><h2>benchmarks.eval_rate_benchmark.eval_rate_benchmark module<a class="headerlink" href="#module-benchmarks.eval_rate_benchmark.eval_rate_benchmark" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="benchmarks.eval_rate_benchmark.eval_rate_benchmark.EvalRateBenchmark">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">benchmarks.eval_rate_benchmark.eval_rate_benchmark.</span></span><span class="sig-name descname"><span class="pre">EvalRateBenchmark</span></span><a class="reference internal" href="_modules/benchmarks/eval_rate_benchmark/eval_rate_benchmark.html#EvalRateBenchmark"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#benchmarks.eval_rate_benchmark.eval_rate_benchmark.EvalRateBenchmark" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="benchmarks.eval_rate_benchmark.eval_rate_benchmark.EvalRateBenchmark.average_rate">
+<span class="sig-name descname"><span class="pre">average_rate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/benchmarks/eval_rate_benchmark/eval_rate_benchmark.html#EvalRateBenchmark.average_rate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#benchmarks.eval_rate_benchmark.eval_rate_benchmark.EvalRateBenchmark.average_rate" title="Link to this definition"></a></dt>
+<dd><p>Calculates the average of the evaluation rates stored in the instance.
+Interface to EvalRateProcessor’s average_eval_rates method from the
+LlavaBenchmark class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The average evaluation rate.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="benchmarks.eval_rate_benchmark.eval_rate_benchmark.EvalRateBenchmark.process_eval_rate">
+<span class="sig-name descname"><span class="pre">process_eval_rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">benchmark_result</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/benchmarks/eval_rate_benchmark/eval_rate_benchmark.html#EvalRateBenchmark.process_eval_rate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#benchmarks.eval_rate_benchmark.eval_rate_benchmark.EvalRateBenchmark.process_eval_rate" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="benchmarks.eval_rate_benchmark.eval_rate_benchmark.EvalRateBenchmark.store_eval_rate">
+<span class="sig-name descname"><span class="pre">store_eval_rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/benchmarks/eval_rate_benchmark/eval_rate_benchmark.html#EvalRateBenchmark.store_eval_rate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#benchmarks.eval_rate_benchmark.eval_rate_benchmark.EvalRateBenchmark.store_eval_rate" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
-<section id="benchmarks-eval-rate-benchmark-eval-rate-plotter-module">
-<h2>benchmarks.eval_rate_benchmark.eval_rate_plotter module<a class="headerlink" href="#benchmarks-eval-rate-benchmark-eval-rate-plotter-module" title="Link to this heading"></a></h2>
+<section id="module-benchmarks.eval_rate_benchmark.eval_rate_plotter">
+<span id="benchmarks-eval-rate-benchmark-eval-rate-plotter-module"></span><h2>benchmarks.eval_rate_benchmark.eval_rate_plotter module<a class="headerlink" href="#module-benchmarks.eval_rate_benchmark.eval_rate_plotter" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="benchmarks.eval_rate_benchmark.eval_rate_plotter.EvalRatePlotter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">benchmarks.eval_rate_benchmark.eval_rate_plotter.</span></span><span class="sig-name descname"><span class="pre">EvalRatePlotter</span></span><a class="reference internal" href="_modules/benchmarks/eval_rate_benchmark/eval_rate_plotter.html#EvalRatePlotter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#benchmarks.eval_rate_benchmark.eval_rate_plotter.EvalRatePlotter" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class is responsible for plotting evaluation rates.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="benchmarks.eval_rate_benchmark.eval_rate_plotter.EvalRatePlotter.None">
+<span class="sig-name descname"><span class="pre">None</span></span><a class="headerlink" href="#benchmarks.eval_rate_benchmark.eval_rate_plotter.EvalRatePlotter.None" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="benchmarks.eval_rate_benchmark.eval_rate_plotter.EvalRatePlotter.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eval_rates</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/benchmarks/eval_rate_benchmark/eval_rate_plotter.html#EvalRatePlotter.plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#benchmarks.eval_rate_benchmark.eval_rate_plotter.EvalRatePlotter.plot" title="Link to this definition"></a></dt>
+<dd><p>Plots the evaluation rates as an ASCII line chart.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>eval_rates</strong> (<em>list</em>) – A list of evaluation rates.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 <section id="module-benchmarks.eval_rate_benchmark.eval_rate_processor">
 <span id="benchmarks-eval-rate-benchmark-eval-rate-processor-module"></span><h2>benchmarks.eval_rate_benchmark.eval_rate_processor module<a class="headerlink" href="#module-benchmarks.eval_rate_benchmark.eval_rate_processor" title="Link to this heading"></a></h2>
@@ -134,8 +192,23 @@
 </dd></dl>
 
 </section>
-<section id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
+<section id="module-benchmarks.eval_rate_benchmark">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-benchmarks.eval_rate_benchmark" title="Link to this heading"></a></h2>
+<p>This is the __init__.py file for the <cite>eval_rate_benchmark</cite> package,
+which is a part of the larger project.</p>
+<p>The <cite>eval_rate_benchmark</cite> package is located in the <cite>benchmarks</cite> directory.
+It contains the <cite>EvalRateBenchmark</cite> class, which is used to evaluate the rate
+of a model as part of the benchmarking process.</p>
+<p>The <cite>EvalRateBenchmark</cite> class is imported here to make it accessible when the
+<cite>eval_rate_benchmark</cite> package is imported elsewhere in the project. This allows
+for a cleaner import statement, as you can directly import the <cite>EvalRateBenchmark</cite>
+class from the <cite>eval_rate_benchmark</cite> package.</p>
+<dl class="simple">
+<dt>For example, instead of using:</dt><dd><p>from benchmarks.eval_rate_benchmark.eval_rate_benchmark import EvalRateBenchmark</p>
+</dd>
+<dt>you can use:</dt><dd><p>from benchmarks.eval_rate_benchmark import EvalRateBenchmark</p>
+</dd>
+</dl>
 </section>
 </section>
 
