@@ -7,21 +7,29 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - name: Setup checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: "2"
+
     - name: Set up Python 3.12
       uses: actions/setup-python@v5
       with:
         python-version: 3.12
+    
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pytest
+        pip install pytest pytest-cov
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Code coverage with codecov
+
+    - name: Run pytest with the module coverage argument
+      run: pytest --cov=benchmarks --cov=modules
+
+    - name: Upload coverage report to Codecov
       uses: codecov/codecov-action@v4.0.1
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
