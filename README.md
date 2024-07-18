@@ -12,7 +12,7 @@
 
 ![Issues](https://img.shields.io/github/issues/jcassady/llava-benchmark?logo=github&label=Issues)
 ![Last commit](https://img.shields.io/github/last-commit/jcassady/llava-benchmark?logo=github&label=Last%20commit)
-![Downloads](https://img.shields.io/github/downloads/jcassady/llava-benchmark/total?logo=github&label=Downloads)
+![GitHub Release](https://img.shields.io/github/v/release/jcassady/llava-benchmark?label=Release)
 ![GitHub repo size](https://img.shields.io/github/repo-size/jcassady/llava-benchmark?logo=github&label=Repo%20size)
 
 
