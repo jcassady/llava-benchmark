@@ -12,7 +12,8 @@ def benchmark():
     return EvalRateBenchmark()
 
 
-# This fixture creates a mock benchmark result with a predefined 'stderr' attribute.
+# This fixture creates a mock benchmark result with a predefined
+# 'stderr' attribute.
 # The 'stderr' attribute is set to mimic the output of a real benchmark.
 # The mock benchmark result will be used in the test function to simulate
 # a real benchmark result.
@@ -33,7 +34,8 @@ def benchmark_result():
 
 
 # Parameterize the test function
-# This allows the test function to run multiple times with different expected results.
+# This allows the test function to run multiple times with different expected
+# results.
 # In this case, it only runs once with the expected result of 61.62 tokens/s.
 @pytest.mark.parametrize("expected", [[61.62]])
 def test_eval_rate_benchmark_process(benchmark, benchmark_result, expected):
@@ -47,4 +49,5 @@ def test_eval_rate_benchmark_process(benchmark, benchmark_result, expected):
 
     # If the assertion fails, an AssertionError will be raised with a
     # message indicating the expected and actual results.
-    assert benchmark.current_eval_rate == expected, f"Expected {expected}, but got {benchmark.current_eval_rate}"
+    assert benchmark.current_eval_rate == expected, f"Expected {expected}, "
+    f"but got {benchmark.current_eval_rate}"

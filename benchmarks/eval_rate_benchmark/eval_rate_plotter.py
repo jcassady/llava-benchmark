@@ -1,3 +1,11 @@
+"""
+This module provides functionality for displaying evaluation rate data.
+
+It contains the EvalRatePlotter class, which includes methods
+for plotting evaluation rates as ASCII line charts to visualize
+performance metrics.
+"""
+
 # Third party imports.
 import asciichartpy
 
@@ -27,8 +35,13 @@ class EvalRatePlotter:
 
         print("\t\tY-axis: Evaluation Rates")
         print("\t\tX-axis: Media")
-        print(asciichartpy.plot(upsampled_eval_rates, {"width": 40,
-                                                       "height": 4,
-                                                       "offset": 2,
-                                                       "colors": ["\033[31m"]}))
+        print(
+            asciichartpy.plot(
+                upsampled_eval_rates,
+                {"width": 40,
+                 "height": 4,
+                 "offset": 2,
+                 "colors": ["\033[31m"]},
+            )
+        )
         print("\n")
