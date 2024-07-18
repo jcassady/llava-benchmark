@@ -6,7 +6,7 @@
 
 models:
   - llava:latest
-  # - llava-llama3:8b
+  - llava-llama3:8b
 prompts:
   - >-
     Summarize the key points of this audio call
@@ -14,6 +14,6 @@ prompts:
 media:
   - 1.mp3
   - 2.mp3
-  # - 3.mp3
-  # - 4.mp3
-  # - 5.mp3
+  - 3.mp3
+  - 4.mp3
+  - 5.mp3
