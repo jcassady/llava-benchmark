@@ -8,6 +8,7 @@
 ![llava-benchmark](assets/llava-benchmark-openai-whisper_logo.png)
 
 
+
 ## Contents
 - [AI Benchmarking Tool 🦙](#ai-benchmarking-tool)
     * [Included Benchmarks](#included-benchmarks)
@@ -26,6 +27,9 @@
 - [Extensibility 🔗](#extensibility)
 - [Testing 🧪](#testing)
     * [Running the Tests 🏃](#running-the-tests)
+- [GitHub Actions 🎬](#github-actions)
+   * [Workflows](#workflows)
+   * [Code coverage charts](#code-coverage-charts)
 - [Contributing 🤝](#contributing)
 - [About 🧑‍💻](#about)
 - [License 📄](#license)
@@ -53,7 +57,7 @@ recording as meeting notes**.
 
 - [Python 3](https://python.org/downloads) 🐍
 - [Ollama](https://ollama.com/download) 🦙
-- Packages: `asciichartpy`, `os`, `pytest`, `shutil`, `subprocess`, `yaml`, `whisper`
+- Packages: `asciichartpy`, `pytest`, `whisper`
 
 ## Cloning the Repository
 
@@ -332,6 +336,36 @@ tests\test_license_plate_benchmark.py .                                         
 
 ========================================================= 2 passed in 0.08s ==========================================================
 ```
+
+## GitHub Actions
+### Workflows
+The `.github/workflows` directory contains configuration for the following GitHub Actions:
+* **archives.yml**:
+  * Creatates a compressed backup of the current state of the project.
+
+* **docs.yml**:
+  * Generate HTML documentation from Python docstrings.
+
+* **code_coverage.yml**:
+  * Runs code coverage analysis using Codecov.
+
+* **pytests.yml**:
+  * Run all `llava-benchmark` tests.
+
+* **code_coverage_ats.yml**:
+  * Run `llava-benchmark` using ATS, identifying only the tests necessary to run for
+    each pull request, reducing the number of tests and saving time. (experimental)
+
+### Code coverage charts
+#### Sunburst
+![codecov-sunburst](https://codecov.io/gh/jcassady/llava-benchmark/graphs/sunburst.svg?token=85L0PEO5MJ)
+
+#### Grid
+![codecov-grid](https://codecov.io/gh/jcassady/llava-benchmark/graphs/tree.svg?token=85L0PEO5MJ)
+
+#### Icicle
+![codecov-icicle](https://codecov.io/gh/jcassady/llava-benchmark/graphs/icicle.svg?token=85L0PEO5MJ)
+
 
 ## Contributing
 
