@@ -1,7 +1,19 @@
 # llava-benchmark 🌋
+![Main branch](https://img.shields.io/github/checks-status/jcassady/llava-benchmark/main?logo=github&label=Main%20branch)
 [![Pytests](https://github.com/jcassady/llava-benchmark/actions/workflows/pytests.yml/badge.svg)](https://github.com/jcassady/llava-benchmark/actions/workflows/pytests.yml)
-[![codecov](https://codecov.io/gh/jcassady/llava-benchmark/graph/badge.svg?token=85L0PEO5MJ)](https://codecov.io/gh/jcassady/llava-benchmark)
-[![License: MIT](https://cdn.prod.website-files.com/5e0f1144930a8bc8aace526c/65dd9eb5aaca434fac4f1c34_License-MIT-blue.svg)](/LICENSE)
+[![Code coverage](https://codecov.io/gh/jcassady/llava-benchmark/graph/badge.svg?token=85L0PEO5MJ)](https://codecov.io/gh/jcassady/llava-benchmark)
+![Contributors](https://img.shields.io/github/contributors/jcassady/llava-benchmark?logo=githubsponsors&label=Contributors)
+![License](https://img.shields.io/github/license/jcassady/llava-benchmark?label=License)
+
+![Archives](https://img.shields.io/github/actions/workflow/status/jcassady/llava-benchmark/archives.yml?logo=githubactions&label=Archives)
+![HTML docs](https://img.shields.io/github/actions/workflow/status/jcassady/llava-benchmark/docs.yml?logo=githubactions&label=HTML%20docs)
+![Codecov](https://img.shields.io/github/actions/workflow/status/jcassady/llava-benchmark/code_coverage.yml?logo=githubactions&label=Codecov)
+![Codecov ATS](https://img.shields.io/github/actions/workflow/status/jcassady/llava-benchmark/code_coverage_ats.yml?logo=githubactions&label=Codecov%20ATS)
+
+![Issues](https://img.shields.io/github/issues/jcassady/llava-benchmark?logo=github&label=Issues)
+![Last commit](https://img.shields.io/github/last-commit/jcassady/llava-benchmark?logo=github&label=Last%20commit)
+![Downloads](https://img.shields.io/github/downloads/jcassady/llava-benchmark/total?logo=github&label=Downloads)
+![GitHub repo size](https://img.shields.io/github/repo-size/jcassady/llava-benchmark?logo=github&label=Repo%20size)
 
 
 
