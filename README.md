@@ -133,7 +133,7 @@ prompts:
   - >-
     Read and return the license plate number and letters
     as text on a new line as plain text:
-images:
+media:
   - 1.jpg
   - 2.jpg
 ```
@@ -148,7 +148,7 @@ prompts:
   - >-
     Summarize the key points of this audio call
     transcript in point form as call notes:
-images:
+media:
   - 1.mp3
   - 2.mp3
 ```
