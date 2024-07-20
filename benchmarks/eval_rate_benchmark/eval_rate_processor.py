@@ -1,3 +1,10 @@
+"""
+This module provides functionality for averaging evaluation rates.
+
+It contains the EvalRateProcessor class, which includes methods for
+extracting evaluation rates from benchmark results.
+"""
+
 # Standard library imports.
 import re
 

@@ -1,5 +1,11 @@
-# Standard library imports.
-import re
+"""
+This module provides benchmarks for processing Ollama's evaluation rate data.
+
+It contains the EvalRateBenchmark class, which includes methods for
+calculating, processing, and storing evaluation rates measured in
+tokens per second.
+"""
+
 
 # Local library imports.
 from .eval_rate_processor import EvalRateProcessor

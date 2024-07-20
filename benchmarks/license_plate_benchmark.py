@@ -1,15 +1,30 @@
+"""
+license_plate_benchmark.py module.
+
+This module contains the LicensePlateBenchmark class for processing
+license plate numbers.
+
+It contains the LicensePlateBenchmark class, which includes methods
+for extracting, processing, and storing license plate numbers from
+benchmark results.
+"""
+
 # Standard library imports.
 import os
 import re
+
 
 class LicensePlateBenchmark:
     """
     A benchmark class for license plate numbers.
 
     Attributes:
-        current_license_plate_number (str): The current license plate number being processed.
-        license_plate_numbers (list): List of extracted license plate numbers.
-        model_license_plate_numbers (dict): Mapping of model names to license plate numbers.
+        current_license_plate_number (str):
+            The current license plate number being processed.
+        license_plate_numbers (list):
+            List of extracted license plate numbers.
+        model_license_plate_numbers (dict):
+            Mapping of model names to license plate numbers.
     """
 
     def __init__(self):
@@ -43,8 +58,10 @@ class LicensePlateBenchmark:
         Returns:
             str: Extracted license plate number or None if not found.
         """
-        pattern = r"failed to get console mode for stderr: The handle is invalid\." \
-                  r"\n(.*)"
+        pattern = (
+            r"failed to get console mode for stderr: "
+            r"The handle is invalid\." r"\n(.*)"
+        )
         match = re.search(pattern, stdout)
         return match.group(1).strip() if match else None
 
@@ -58,8 +75,8 @@ class LicensePlateBenchmark:
         self.current_license_plate_number = self.extract_license_plate_number(
             benchmark_result.stdout
         )
-        print(
-            f"◽ Plate:\t{self.current_license_plate_number or 'not found'}\t🚗\n")
+        plate_info = self.current_license_plate_number or 'not found'
+        print(f"◽ Plate:\t{plate_info}\t🚗\n")
 
     def store_license_plate(self, model: str, benchmark_result: str) -> None:
         """
@@ -72,6 +89,6 @@ class LicensePlateBenchmark:
         self.process_license_plate_number(benchmark_result)
         if self.current_license_plate_number is not None:
             self.license_plate_numbers.append(
-                self.current_license_plate_number)
+                self.current_license_plate_number
+            )
         self.model_license_plate_numbers[model] = self.license_plate_numbers
-

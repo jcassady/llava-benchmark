@@ -8,11 +8,12 @@ of a model as part of the benchmarking process.
 
 The `EvalRateBenchmark` class is imported here to make it accessible when the
 `eval_rate_benchmark` package is imported elsewhere in the project. This allows
-for a cleaner import statement, as you can directly import the `EvalRateBenchmark`
-class from the `eval_rate_benchmark` package.
+for a cleaner import statement, as you can directly import the
+`EvalRateBenchmark` class from the `eval_rate_benchmark` package.
 
 For example, instead of using:
-    from benchmarks.eval_rate_benchmark.eval_rate_benchmark import EvalRateBenchmark
+    from benchmarks.eval_rate_benchmark.eval_rate_benchmark
+    import EvalRateBenchmark
 you can use:
     from benchmarks.eval_rate_benchmark import EvalRateBenchmark
 """

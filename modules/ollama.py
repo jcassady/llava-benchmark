@@ -59,7 +59,9 @@ class Ollama:
             return None
 
     @staticmethod
-    def run_benchmark(model: str, prompt: str, media_file_path: str) -> subprocess.CompletedProcess:
+    def run_benchmark(model: str,
+                      prompt: str,
+                      media_file_path: str) -> subprocess.CompletedProcess:
         """
         Run a benchmark using the specified model, prompt, and media file path.
 
@@ -93,7 +95,10 @@ class Ollama:
         section_title = "PROMPT:"
         lines = prompt.strip().splitlines()
         wrapped_lines = [textwrap.fill(
-            line, width=40, initial_indent=" ", subsequent_indent=" ") for line in lines]
+            line, width=40,
+            initial_indent=" ",
+            subsequent_indent=" "
+        ) for line in lines]
 
         print(section_title)
         for wrapped_line in wrapped_lines:

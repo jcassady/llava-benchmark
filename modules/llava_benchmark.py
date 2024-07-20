@@ -7,7 +7,6 @@ from benchmarks.license_plate_benchmark import LicensePlateBenchmark
 from benchmarks.call_audio_benchmark import CallAudioBenchmark
 
 
-
 class LlavaBenchmark:
     """
     LLaVA Benchmark class for processing media and storing results.
@@ -33,7 +32,8 @@ class LlavaBenchmark:
             media_file (str): Path to the media file.
 
         Returns:
-            tuple: A tuple containing transcript (str) and media file path (str).
+            tuple: A tuple containing transcript (str)
+            and media file path (str).
         """
         for benchmark in self.benchmarks:
             if isinstance(benchmark, EvalRateBenchmark):
@@ -48,12 +48,16 @@ class LlavaBenchmark:
                 media_file_path = benchmark.media_file_path(media_file)
                 return transcript, media_file_path
 
-    def store_results(self, benchmark_result: str, model: str, media_file_path: str) -> None:
+    def store_results(self,
+                      benchmark_result: str,
+                      model: str,
+                      media_file_path: str) -> None:
         """
         Store the benchmark results.
 
         Args:
-            benchmark_result (subprocess.CompletedProcess): Result of the subprocess.run call.
+            benchmark_result (subprocess.CompletedProcess):
+                Result of the subprocess.run call.
             model (str): The name of the model to use.
             media_file_path (str): The media file path.
         """
