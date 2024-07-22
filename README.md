@@ -5,14 +5,9 @@
 ![Contributors](https://img.shields.io/github/contributors/jcassady/llava-benchmark?logo=githubsponsors&label=Contributors)
 ![License](https://img.shields.io/github/license/jcassady/llava-benchmark?label=License)
 
-![Archives](https://img.shields.io/github/actions/workflow/status/jcassady/llava-benchmark/archives.yml?logo=githubactions&label=Archives)
-![HTML docs](https://img.shields.io/github/actions/workflow/status/jcassady/llava-benchmark/docs.yml?logo=githubactions&label=HTML%20docs)
-![Codecov](https://img.shields.io/github/actions/workflow/status/jcassady/llava-benchmark/code_coverage.yml?logo=githubactions&label=Codecov)
-![Codecov ATS](https://img.shields.io/github/actions/workflow/status/jcassady/llava-benchmark/code_coverage_ats.yml?logo=githubactions&label=Codecov%20ATS)
-
 ![Issues](https://img.shields.io/github/issues/jcassady/llava-benchmark?logo=github&label=Issues)
-![Last commit](https://img.shields.io/github/last-commit/jcassady/llava-benchmark?logo=github&label=Last%20commit)
 ![GitHub Release](https://img.shields.io/github/v/release/jcassady/llava-benchmark?label=Release)
+![Last commit](https://img.shields.io/github/last-commit/jcassady/llava-benchmark?logo=github&label=Last%20commit)
 ![GitHub repo size](https://img.shields.io/github/repo-size/jcassady/llava-benchmark?logo=github&label=Repo%20size)
 
 
