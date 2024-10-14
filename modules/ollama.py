@@ -1,13 +1,13 @@
 # Standard library imports.
 import shutil
-import subprocess
 import textwrap
 
 # Third party imports.
 import yaml
+import groq
 
 
-class Ollama:
+class Groq:
     @staticmethod
     def is_binary_installed():
         """
